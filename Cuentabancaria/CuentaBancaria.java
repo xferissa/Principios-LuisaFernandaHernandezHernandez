@@ -63,7 +63,7 @@ public class CuentaBancaria {
    */
   public void retirar(double monto)
   {
-	System.out.println("Retitando "+monto);
+	System.out.println("Retirando "+monto);
 	if(this.saldo<1){
 		System.out.println("Fondo insuficiente...");
 	}else{
