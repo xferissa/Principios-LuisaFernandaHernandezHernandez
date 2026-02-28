@@ -1,0 +1,6 @@
+class PagoPaypal implements MetodoPago{
+	@Override
+	public void procesarPago(){
+		System.out.println("Procesando pago con PayPal...");
+	}
+}
