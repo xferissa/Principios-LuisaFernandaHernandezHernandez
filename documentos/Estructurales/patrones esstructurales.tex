@@ -1,0 +1,303 @@
+%
+% Paper title
+% Authors
+% 
+%-----------------------------------------------------------------
+
+\documentclass[12pt,longbibliography]{article}
+
+% Packages
+%-----------------------------------------------------------------
+
+% Allow direct use of accents such as á é ñ.
+\usepackage[utf8]{inputenc}
+
+% This is a good idea to have some symbols included within the font
+% properly:
+% http://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
+\usepackage[T1]{fontenc}
+
+% Set type of paper and margins.
+\usepackage[a4paper, margin=2.7cm]{geometry}
+
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{mathrsfs}           % \mathscr font.
+
+% Generate a PDF with hyperlinks in references.
+\usepackage[colorlinks=true,linkcolor=black,citecolor=blue,urlcolor=black,breaklinks]{hyperref}
+
+% Double-stroke font (\mathbbm).
+\usepackage{bbm} 
+
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{dartKeyword}{RGB}{0,119,170}
+\definecolor{dartString}{RGB}{105,155,53}
+\definecolor{dartComment}{RGB}{112,128,144}
+\definecolor{dartType}{RGB}{38,139,210}
+
+\lstset{
+	language=Java,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{dartKeyword}\bfseries,
+	stringstyle=\color{dartString},
+	commentstyle=\color{dartComment}\itshape,
+	morekeywords={class, static, final, async, await, extends, abstract, override, Widget, dynamic, var, return},
+	frame=single,
+	rulecolor=\color{gray!30},
+	backgroundcolor=\color{gray!5},
+	breaklines=true,
+	showstringspaces=false,
+	tabsize=2,
+	captionpos=b
+}
+
+% Bibliography
+%-----------------------------------------------------------------
+
+% This uses a bibliography style which hyperlinks the paper titles to
+% the paper URL specified in the bibtex file. It also uses natbib,
+% which cites papers by name such as Euler (1770) instead of [17].
+
+\usepackage{breakurl}
+\usepackage{natbib}
+\usepackage{url}
+\bibliographystyle{plainnat-linked}
+% \bibliographystyle{plain}
+
+% Shortcuts
+%-----------------------------------------------------------------
+
+% Absolute value 
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+% Inner product
+\newcommand{\ap}[1]{\left\langle#1\right\rangle}
+% Norm
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+% Triple norm
+\newcommand{\tnorm}[1]{\left\vert\!\left\vert\!\left\vert#1\right\vert\!\right\vert\!\right\vert}
+
+% Common double-stroke letters
+\def\C{\mathbb{C}}
+\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\S{\mathbb{S}}
+\def\Z{\mathbb{Z}}
+
+\def\D{\mathcal{D}}
+% \def\L{\mathcal{L}}
+
+\def\grad{\nabla}
+\DeclareMathOperator{\dive}{div}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\essup}{ess\,sup}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\sgn}{sgn}
+
+% Notation for differentials
+\def\d{\,\mathrm{d}}
+\def\dv{\d v}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddr{\frac{\mathrm{d}}{\mathrm{d}r}}
+
+\def\p{\partial}
+
+\def\ird{\int_{\R^d}}
+\renewcommand{\L}[1]{L^{#1}(\R^d)}
+
+% Theorems
+%-----------------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+% \newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prp}[thm]{Proposition}
+% \newtheorem{hyp}[thm]{Hypothesis}
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{prb}{Problem}
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\theoremstyle{example}
+\newtheorem{ex}[thm]{Example}
+
+
+% Title, author, date
+%-----------------------------------------------------------------
+
+% If set, these will be the internal title and author of the PDF (and
+% will be listed for example in ereaders and tablets).
+
+% \hypersetup{pdftitle={Title of the PDF}}
+% \hypersetup{pdfauthor={Author of the PDF}}
+
+
+% Paper title and author
+\title{REPORTE:\\Implementación de patrones estructurales en una aplicacion movil desarrollada en Flutter}
+\author{Luisa Fernanda Hernández Hdez.}
+
+% Date is set automatically unless specified.
+% \date{October 2015}
+
+
+% Addresses. The "article" class does not have a standard way to
+% include them. This imitates the behaviour of "amsart" by inserting
+% them at the end of the paper.
+%-----------------------------------------------------------------
+
+%
+
+
+% =========================================================================
+
+\begin{document}
+	
+	\maketitle
+	\begin{center}
+		\includegraphics[scale=0.3]{/Users/Admin/Downloads/portada.jpg}
+	\end{center}
+	\vfil
+	\begin{center}{\large 
+			Universidad Veracruzana\\Ingeniería de Software\\}
+	\end{center}
+%	\begin{abstract}
+		
+%	\end{abstract}
+	\vspace{3cm}
+	\pagebreak
+	
+	\tableofcontents
+	
+	\pagebreak
+	
+	\section{Introducción}
+		Los patrones de diseño estructurales se enfocan en la composición de clases y objetos para formar estructuras de software más complejas y eficientes. Su objetivo primordial es facilitar que diferentes partes de un sistema, a menudo con interfaces incompatibles, puedan trabajar juntas de manera armónica sin comprometer la integridad del sistema.
+		\\
+		
+		A diferencia de los patrones creacionales, que gestionan el proceso de instanciación, los estructurales utilizan la herencia y la composición para simplificar el diseño y reducir el acoplamiento. Permiten que los desarrolladores identifiquen una forma sencilla de realizar relaciones entre entidades, lo que resulta en sistemas más fáciles de mantener y escalar.
+		
+	\section{Descripción del Proyecto: Aplicación en Flutter y API REST}
+		El sistema desarrollado representa una solución integral para la gestión de interacciones sociales (tweets, likes y comentarios). La arquitectura se divide en dos componentes principales:
+		
+		\begin{enumerate}
+			\item \textbf{Backend (API REST):} Construido sobre el ecosistema de Java con Spring Boot. Utiliza una base de datos PostgreSQL y seguridad basada en JWT. El despliegue se realizó mediante contenedores Docker, garantizando un entorno de ejecución aislado y escalable en la nube (Render).
+			\item \textbf{Frontend (Flutter):} Una aplicación móvil y web desarrollada bajo el paradigma de programación reactiva. Esta aplicación consume los recursos de la API de forma asíncrona, permitiendo la visualización de datos dinámicos y la persistencia de interacciones del usuario en tiempo real.
+		\end{enumerate}
+		
+	\section{Implementación de Patrones Estructurales en la aplicación de Flutter}
+		En Flutter, donde la composición es el principio rector (todo es un \textit{Widget}), los patrones estructurales permiten organizar la UI y la lógica de negocio de manera profesional.
+	
+		\subsection{Patrón Adapter}
+		Se utiliza para transformar los datos crudos (JSON) de la API de Spring Boot en objetos de modelo de Dart.
+		\begin{lstlisting}[language=dart, caption=Ejemplo de Adapter para Modelos]
+			class TweetAdapter {
+				static Tweet fromJson(Map<String, dynamic> json) {
+					return Tweet(
+					id: json['id'],
+					content: json['text_content'], // Adapta 'text_content' a 'content'
+					author: json['user']['name'],
+					);
+				}
+			}
+		\end{lstlisting}
+		
+		\subsection{Patrón Bridge}
+		Separa la abstracción del servicio de su implementación específica por plataforma.
+		\begin{lstlisting}[language=dart, caption=Ejemplo de Bridge para Notificaciones]
+			abstract class NotificationImpl {
+				void send(String msg);
+			}
+			
+			class AndroidNotification extends NotificationImpl {
+				@override
+				void send(String msg) => print("Push Android: $msg");
+			}
+			
+			class WebNotification extends NotificationImpl {
+				@override
+				void send(String msg) => print("Toast Web: $msg");
+			}
+		\end{lstlisting}
+		
+		\subsection{Patrón Composite}
+		Es la base de Flutter; permite tratar widgets simples y complejos de forma uniforme.
+		\begin{lstlisting}[language=dart, caption=Uso de Composite en UI]
+			Widget build(BuildContext context) {
+				return Column( // Widget compuesto
+				children: [
+				Text("Tweet de Luisa"), // Widget simple
+				Icon(Icons.favorite),   // Widget simple
+				],
+				);
+			}
+		\end{lstlisting}
+		
+		\subsection{Patrón Decorator}
+		Añade responsabilidades adicionales a un widget envolviéndolo en otro (Wrapper).
+		\begin{lstlisting}[language=dart, caption=Ejemplo de Decorator con Container]
+			Widget decoratedImage(Widget image) {
+				return Container(
+				decoration: BoxDecoration(
+				border: Border.all(color: Colors.blue, width: 2),
+				borderRadius: BorderRadius.circular(10),
+				),
+				child: image, // El widget original es "decorado"
+				);
+			}
+		\end{lstlisting}
+		
+		\subsection{Patrón Facade}
+		Proporciona una interfaz simplificada para el subsistema de red (API de Render).
+		\begin{lstlisting}[language=dart, caption=Facade para Servicios API]
+			class InteractionFacade {
+				final ApiService _api = ApiService();
+				
+				Future<void> likeTweet(int id) async {
+					await _api.post('/interactions/react/$id', body: 1);
+				}
+			}
+		\end{lstlisting}
+		
+		\subsection{Patrón Flyweight}
+		Optimiza la memoria compartiendo instancias de objetos pesados o repetitivos.
+		\begin{lstlisting}[language=dart, caption=Uso de Flyweight en Estilos]
+			class TextStyleFactory {
+				static const TextStyle tweetStyle = TextStyle(
+				fontSize: 14,
+				fontWeight: FontWeight.bold,
+				color: Colors.black,
+				);
+				// Se reutiliza la misma instancia en todos los tweets
+			}
+		\end{lstlisting}
+		
+		\subsection{Patrón Proxy}
+		Actúa como un sustituto de un objeto para controlar el acceso o mostrar un estado de carga.
+		\begin{lstlisting}[language=dart, caption=Proxy para Imágenes de Red]
+			Image.network(
+			'https://render-api.com/image.png',
+			loadingBuilder: (context, child, progress) {
+				if (progress == null) return child;
+				return CircularProgressIndicator(); // Proxy visual mientras carga
+			},
+			);
+		\end{lstlisting}
+	
+	\section{Conclusión: Importancia y Beneficios}
+		La adopción de patrones estructurales trasciende la simple organización del código; es una garantía de calidad técnica. Sus beneficios principales incluyen:
+		\begin{itemize}
+			\item \textbf{Flexibilidad:} Permiten realizar cambios profundos en una 	parte del sistema sin afectar el resto.
+			\item \textbf{Reutilización:} Facilitan el uso de componentes existentes en 	nuevas estructuras.
+			\item \textbf{Legibilidad:} Establecen un estándar de comunicación claro para el equipo de desarrollo.
+		\end{itemize}
+	
+		En conclusión, la correcta estructuración del software asegura que el proyecto sea resiliente, capaz de evolucionar ante nuevos requerimientos y técnicamente sostenible a largo plazo.
+	
+	
+	\end{document}
